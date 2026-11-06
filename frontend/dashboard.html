@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard della comunità</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo" aria-hidden="true">▣</div>
+      <div class="user"><strong id="user-name">Profilo</strong><small>Utente</small></div>
+      <nav>
+        <a href="#top" class="active">⌂ Dashboard</a>
+        <a href="#lostfound">▣ Lost &amp; Found</a>
+        <span class="off">⚠ Segnalazioni</span>
+        <span class="off">☆ Attività</span>
+        <span class="off">≡ Impostazioni</span>
+        <a href="index.html" id="logout">⇦ Esci</a>
+      </nav>
+    </aside>
+
+    <div class="content" id="top">
+      <header class="topbar">
+        <h1>Dashboard della comunità</h1>
+        <span id="today" class="muted"></span>
+        <label class="file-btn">Carica riepilogo.json
+          <input type="file" id="file-input" accept=".json">
+        </label>
+      </header>
+
+      <main>
+        <p id="message" role="status">Seleziona il file riepilogo.json per vedere la dashboard.</p>
+
+        <div id="results" hidden>
+          <section class="banner">
+            <div class="banner-icon" aria-hidden="true">✉</div>
+            <div>
+              <small><span id="banner-date"></span> <span class="badge">Piattaforma</span></small>
+              <h3>Lost &amp; Found è disponibile</h3>
+              <p>Registra un oggetto trovato, cercalo per luogo e segna la restituzione. Gli altri moduli arrivano a breve.</p>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>I miei moduli</h2>
+              <div class="tabs" id="tabs" role="group" aria-label="Filtra moduli"></div>
+            </div>
+            <div id="modules" class="cards"></div>
+          </section>
+
+          <h2 class="center">Riepilogo della comunità</h2>
+          <section class="summary">
+            <article class="panel">
+              <h3>Oggetti da restituire</h3>
+              <div class="donut-row">
+                <div id="donut" class="donut"><span id="donut-label"></span></div>
+                <ul id="bars" class="bars"></ul>
+              </div>
+              <p class="muted" id="donut-caption"></p>
+            </article>
+            <article class="panel">
+              <h3>Prossime attività <small class="muted">(30 giorni)</small></h3>
+              <ul id="activities" class="activities"></ul>
+            </article>
+          </section>
+
+          <section class="panel" id="lostfound">
+            <div class="panel-head">
+              <h2>Oggetti registrati</h2>
+              <div class="filters">
+                <input type="search" id="search" placeholder="Cerca per luogo o oggetto" aria-label="Cerca">
+                <select id="filter-stato" aria-label="Filtra per stato">
+                  <option value="">Tutti</option>
+                  <option value="trovato">Da restituire</option>
+                  <option value="restituito">Restituiti</option>
+                </select>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Oggetto</th><th>Luogo</th><th>Stato</th><th>Data</th></tr></thead>
+                <tbody id="table-body"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
