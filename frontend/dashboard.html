@@ -16,7 +16,7 @@
         <a href="#lost-found" data-link>▣ Lost &amp; Found</a>
         <span class="off">⚠ Segnalazioni</span>
         <span class="off">☆ Attività</span>
-        <span class="off push">≡ Impostazioni</span>
+        <a href="#impostazioni" data-link class="push">≡ Impostazioni</a>
         <a href="index.html" id="logout">⇦ Esci</a>
       </nav>
     </aside>
@@ -74,37 +74,49 @@
 
           <!-- PAGINA: LOST & FOUND -->
           <div class="page" data-page="lost-found" hidden>
-            <details class="panel fold" id="add-details">
-              <summary>Hai trovato un oggetto? Registralo</summary>
-              <form id="add-form" class="add-form" novalidate>
-                <div class="field"><label for="f-oggetto">Oggetto</label>
-                  <input id="f-oggetto" type="text" placeholder="Es. Ombrello blu" aria-describedby="e-oggetto">
-                  <div class="error" id="e-oggetto" role="alert"></div></div>
-                <div class="field"><label for="f-luogo">Luogo</label>
-                  <input id="f-luogo" type="text" placeholder="Es. Aula 3" aria-describedby="e-luogo">
-                  <div class="error" id="e-luogo" role="alert"></div></div>
-                <div class="field"><label for="f-data">Data</label>
-                  <input id="f-data" type="date" aria-describedby="e-data">
-                  <div class="error" id="e-data" role="alert"></div></div>
-                <div class="field wide"><label for="f-descrizione">Descrizione (facoltativa)</label>
-                  <textarea id="f-descrizione" rows="2" maxlength="200" placeholder="Colore, marca, segni particolari: aiuta chi lo cerca"></textarea></div>
-                <button class="btn" type="submit">Registra oggetto</button>
-              </form>
-            </details>
-
             <section class="panel" id="lostfound">
-              <h2>Bacheca Lost &amp; Found</h2>
-              <p class="muted sub">Cerca tra gli oggetti ritrovati con una o più parole chiave (nome, luogo o descrizione).</p>
+              <div class="board-head">
+                <div>
+                  <h2>Bacheca Lost &amp; Found</h2>
+                  <p class="add-hint" id="add-hint">Il + a destra registra un nuovo oggetto trovato.</p>
+                </div>
+                <button type="button" class="plus-btn" id="open-add" aria-label="Registra un nuovo oggetto" aria-describedby="add-hint" title="Registra un nuovo oggetto">+</button>
+              </div>
+              <p class="muted sub">Cerca per nome, luogo o parola chiave, oppure filtra per tipo.</p>
               <div class="board-tools">
-                <input type="search" id="search" placeholder="Es. zaino nero, biblioteca…" aria-label="Cerca oggetti">
+                <input type="search" id="search" placeholder="Es. zaino, biblioteca, blu" aria-label="Cerca oggetti">
+                <select id="filter-tipo" aria-label="Filtra per tipo">
+                  <option value="">Tutti i tipi</option>
+                  <option>Abbigliamento</option>
+                  <option>Borse</option>
+                  <option>Elettronica</option>
+                  <option>Cancelleria</option>
+                  <option>Chiavi</option>
+                  <option>Contenitori</option>
+                  <option>Documenti</option>
+                  <option>Altro</option>
+                </select>
                 <select id="filter-stato" aria-label="Filtra per stato">
-                  <option value="">Tutti</option>
+                  <option value="">Tutti gli stati</option>
                   <option value="trovato">Da restituire</option>
                   <option value="restituito">Restituiti</option>
                 </select>
               </div>
+              <div class="chips" id="keyword-chips" hidden></div>
               <p class="muted" id="count" role="status" aria-live="polite"></p>
               <div id="board" class="cards"></div>
+            </section>
+          </div>
+
+          <!-- PAGINA: IMPOSTAZIONI -->
+          <div class="page" data-page="impostazioni" hidden>
+            <section class="panel">
+              <h2>Impostazioni del profilo</h2>
+              <p class="muted sub">Da qui gestirai i dati del profilo con cui hai effettuato l’accesso.</p>
+              <dl class="profile">
+                <div><dt>Nome</dt><dd id="profile-name">Profilo</dd></div>
+                <div><dt>Ruolo</dt><dd>Utente</dd></div>
+              </dl>
             </section>
           </div>
 
@@ -112,6 +124,46 @@
       </main>
     </div>
   </div>
+  <dialog id="add-dialog" class="detail" aria-labelledby="add-title">
+    <div class="detail-head">
+      <h2 id="add-title">Registra un oggetto</h2>
+      <button type="button" id="add-close" class="detail-x" aria-label="Chiudi">✕</button>
+    </div>
+    <p class="muted sub">Compila i campi: l’oggetto comparirà subito in bacheca.</p>
+    <form id="add-form" class="add-form" novalidate>
+      <div class="field"><label for="f-oggetto">Oggetto</label>
+        <input id="f-oggetto" type="text" placeholder="Es. Ombrello blu" aria-describedby="e-oggetto">
+        <div class="error" id="e-oggetto" role="alert"></div></div>
+      <div class="field"><label for="f-luogo">Luogo</label>
+        <input id="f-luogo" type="text" placeholder="Es. Aula 3" aria-describedby="e-luogo">
+        <div class="error" id="e-luogo" role="alert"></div></div>
+      <div class="field"><label for="f-data">Data</label>
+        <input id="f-data" type="date" aria-describedby="e-data">
+        <div class="error" id="e-data" role="alert"></div></div>
+      <div class="field"><label for="f-tipo">Tipo</label>
+        <select id="f-tipo" aria-describedby="e-tipo">
+          <option value="">Scegli il tipo</option>
+          <option>Abbigliamento</option>
+          <option>Borse</option>
+          <option>Elettronica</option>
+          <option>Cancelleria</option>
+          <option>Chiavi</option>
+          <option>Contenitori</option>
+          <option>Documenti</option>
+          <option>Altro</option>
+        </select>
+        <div class="error" id="e-tipo" role="alert"></div></div>
+      <div class="field"><label for="f-parole">Parole chiave (facoltative)</label>
+        <input id="f-parole" type="text" placeholder="Es. blu, pieghevole"></div>
+      <div class="field wide"><label for="f-foto">Foto (facoltativa)</label>
+        <input id="f-foto" type="file" accept="image/*" aria-describedby="e-foto">
+        <img id="foto-preview" class="foto-preview" alt="" hidden>
+        <div class="error" id="e-foto" role="alert"></div></div>
+      <div class="field wide"><label for="f-descrizione">Descrizione (facoltativa)</label>
+        <textarea id="f-descrizione" rows="2" maxlength="200" placeholder="Colore, marca, segni particolari: aiuta chi lo cerca"></textarea></div>
+      <button class="btn" type="submit">Registra oggetto</button>
+    </form>
+  </dialog>
   <dialog id="detail" class="detail" aria-labelledby="detail-title">
     <div class="detail-head">
       <h2 id="detail-title"></h2>

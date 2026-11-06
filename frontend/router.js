@@ -6,6 +6,7 @@
   const titles = {
     "dashboard": "Dashboard della comunità",
     "lost-found": "Lost & Found",
+    "impostazioni": "Impostazioni",
   };
 
   function router() {
@@ -18,7 +19,7 @@
     });
     title.textContent = titles[page];
     document.title = titles[page];
-    window.scrollTo(0, 0);
+    document.querySelector(".content").scrollTo(0, 0);
   }
 
   window.addEventListener("hashchange", router);
