@@ -27,6 +27,6 @@ In tre unite Frontend e Coordinamento e documentazione. Ognuno deve saper spiega
 
 ## Avvio del gruppo
 
-- [] Nomi e ruoli sono scritti nel Project Brief
-- [] La cartella del gruppo è creata e tutti la aprono
-- [] Ogni file ha un responsabile
+- [ ] Nomi e ruoli sono scritti nel Project Brief
+- [ ] La cartella del gruppo è creata e tutti la aprono
+- [ ] Ogni file ha un responsabile
