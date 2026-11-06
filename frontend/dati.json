@@ -1,0 +1,68 @@
+{
+  "oggetti": [
+    {
+      "id": 1,
+      "Oggetto": "Ombrello blu",
+      "Luogo": "Aula 3",
+      "Stato": "trovato",
+      "Data": "2026-11-05",
+      "Descrizione": "Ombrello pieghevole blu scuro con manico nero, trovato appoggiato vicino alla porta."
+    },
+    {
+      "id": 2,
+      "Oggetto": "Zaino nero",
+      "Luogo": "Biblioteca",
+      "Stato": "trovato",
+      "Data": "2026-11-04",
+      "Descrizione": "Zaino nero con una toppa gialla sulla tasca anteriore. Dentro c'erano dei fogli."
+    },
+    {
+      "id": 3,
+      "Oggetto": "Chiavi con portachiavi",
+      "Luogo": "Mensa",
+      "Stato": "trovato",
+      "Data": "2026-11-03",
+      "Descrizione": "Mazzo di tre chiavi con un portachiavi a forma di stella."
+    },
+    {
+      "id": 4,
+      "Oggetto": "Giacca grigia",
+      "Luogo": "Aula 1",
+      "Stato": "trovato",
+      "Data": "2026-11-02",
+      "Descrizione": "Giacca grigia taglia M, lasciata sullo schienale di una sedia."
+    },
+    {
+      "id": 5,
+      "Oggetto": "Cuffie bluetooth",
+      "Luogo": "Aula studio",
+      "Stato": "trovato",
+      "Data": "2026-10-30",
+      "Descrizione": "Cuffie bluetooth bianche nella custodia rigida."
+    },
+    {
+      "id": 6,
+      "Oggetto": "Borraccia verde",
+      "Luogo": "Palestra",
+      "Stato": "trovato",
+      "Data": "2026-10-28",
+      "Descrizione": "Borraccia in alluminio verde con adesivi sul fianco."
+    },
+    {
+      "id": 7,
+      "Oggetto": "Quaderno a quadretti",
+      "Luogo": "Biblioteca",
+      "Stato": "trovatogit",
+      "Data": "2026-10-25",
+      "Descrizione": "Quaderno a quadretti con copertina rossa, appunti di matematica."
+    },
+    {
+      "id": 8,
+      "Oggetto": "Portafoglio marrone",
+      "Luogo": "Ingresso",
+      "Stato": "trovato",
+      "Data": "2026-10-22",
+      "Descrizione": "Portafoglio in pelle marrone, contiene alcune tessere."
+    }
+  ]
+}
