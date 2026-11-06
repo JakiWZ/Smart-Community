@@ -25,15 +25,13 @@
       <header class="topbar">
         <h1>Dashboard della comunità</h1>
         <span id="today" class="muted"></span>
-        <label class="file-btn">Carica riepilogo.json
-          <input type="file" id="file-input" accept=".json">
-        </label>
+        <button type="button" class="file-btn" id="reset">Ripristina dati</button>
       </header>
 
       <main>
-        <p id="message" role="status">Seleziona il file riepilogo.json per vedere la dashboard.</p>
+        <p id="message" class="muted" role="status"></p>
 
-        <div id="results" hidden>
+        <div id="results">
           <section class="banner">
             <div class="banner-icon" aria-hidden="true">✉</div>
             <div>
@@ -68,8 +66,22 @@
           </section>
 
           <section class="panel" id="lostfound">
+            <h2>Lost &amp; Found</h2>
+            <form id="add-form" class="add-form" novalidate>
+              <div class="field"><label for="f-oggetto">Oggetto</label>
+                <input id="f-oggetto" type="text" placeholder="Es. Ombrello blu" aria-describedby="e-oggetto">
+                <div class="error" id="e-oggetto" role="alert"></div></div>
+              <div class="field"><label for="f-luogo">Luogo</label>
+                <input id="f-luogo" type="text" placeholder="Es. Aula 3" aria-describedby="e-luogo">
+                <div class="error" id="e-luogo" role="alert"></div></div>
+              <div class="field"><label for="f-data">Data</label>
+                <input id="f-data" type="date" aria-describedby="e-data">
+                <div class="error" id="e-data" role="alert"></div></div>
+              <button class="btn" type="submit">Registra oggetto</button>
+            </form>
+
             <div class="panel-head">
-              <h2>Oggetti registrati</h2>
+              <h3>Oggetti registrati</h3>
               <div class="filters">
                 <input type="search" id="search" placeholder="Cerca per luogo o oggetto" aria-label="Cerca">
                 <select id="filter-stato" aria-label="Filtra per stato">
@@ -81,7 +93,7 @@
             </div>
             <div class="table-wrap">
               <table>
-                <thead><tr><th>Oggetto</th><th>Luogo</th><th>Stato</th><th>Data</th></tr></thead>
+                <thead><tr><th>Oggetto</th><th>Luogo</th><th>Stato</th><th>Data</th><th>Azione</th></tr></thead>
                 <tbody id="table-body"></tbody>
               </table>
             </div>
@@ -90,6 +102,7 @@
       </main>
     </div>
   </div>
+  <script src="dati.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
