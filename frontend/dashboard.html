@@ -12,11 +12,11 @@
       <div class="logo" aria-hidden="true">▣</div>
       <div class="user"><strong id="user-name">Profilo</strong><small>Utente</small></div>
       <nav>
-        <a href="#top" class="active">⌂ Dashboard</a>
-        <a href="#lostfound">▣ Lost &amp; Found</a>
+        <a href="#dashboard" data-link class="active">⌂ Dashboard</a>
+        <a href="#lost-found" data-link>▣ Lost &amp; Found</a>
         <span class="off">⚠ Segnalazioni</span>
         <span class="off">☆ Attività</span>
-        <span class="off">≡ Impostazioni</span>
+        <span class="off push">≡ Impostazioni</span>
         <a href="index.html" id="logout">⇦ Esci</a>
       </nav>
     </aside>
@@ -32,77 +32,96 @@
         <p id="message" class="muted" role="status"></p>
 
         <div id="results">
-          <section class="banner">
-            <div class="banner-icon" aria-hidden="true">✉</div>
-            <div>
-              <small><span id="banner-date"></span> <span class="badge">Piattaforma</span></small>
-              <h3>Lost &amp; Found è disponibile</h3>
-              <p>Registra un oggetto trovato, cercalo per luogo e segna la restituzione. Gli altri moduli arrivano a breve.</p>
-            </div>
-          </section>
 
-          <section class="panel">
-            <div class="panel-head">
-              <h2>I miei moduli</h2>
-              <div class="tabs" id="tabs" role="group" aria-label="Filtra moduli"></div>
-            </div>
-            <div id="modules" class="cards"></div>
-          </section>
-
-          <h2 class="center">Riepilogo della comunità</h2>
-          <section class="summary">
-            <article class="panel">
-              <h3>Oggetti da restituire</h3>
-              <div class="donut-row">
-                <div id="donut" class="donut"><span id="donut-label"></span></div>
-                <ul id="bars" class="bars"></ul>
+          <!-- PAGINA: DASHBOARD -->
+          <div class="page" data-page="dashboard">
+            <section class="banner">
+              <div class="banner-icon" aria-hidden="true">✉</div>
+              <div>
+                <small><span id="banner-date"></span> <span class="badge">Piattaforma</span></small>
+                <h3>Lost &amp; Found è disponibile</h3>
+                <p>Registra un oggetto trovato, cercalo per luogo e segna la restituzione. Gli altri moduli arrivano a breve.</p>
               </div>
-              <p class="muted" id="donut-caption"></p>
-            </article>
-            <article class="panel">
-              <h3>Prossime attività <small class="muted">(30 giorni)</small></h3>
-              <ul id="activities" class="activities"></ul>
-            </article>
-          </section>
+            </section>
 
-          <section class="panel" id="lostfound">
-            <h2>Lost &amp; Found</h2>
-            <form id="add-form" class="add-form" novalidate>
-              <div class="field"><label for="f-oggetto">Oggetto</label>
-                <input id="f-oggetto" type="text" placeholder="Es. Ombrello blu" aria-describedby="e-oggetto">
-                <div class="error" id="e-oggetto" role="alert"></div></div>
-              <div class="field"><label for="f-luogo">Luogo</label>
-                <input id="f-luogo" type="text" placeholder="Es. Aula 3" aria-describedby="e-luogo">
-                <div class="error" id="e-luogo" role="alert"></div></div>
-              <div class="field"><label for="f-data">Data</label>
-                <input id="f-data" type="date" aria-describedby="e-data">
-                <div class="error" id="e-data" role="alert"></div></div>
-              <button class="btn" type="submit">Registra oggetto</button>
-            </form>
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <h2>Ultimi annunci</h2>
+                  <p class="muted sub">Gli oggetti pubblicati più di recente in Lost &amp; Found.</p>
+                </div>
+                <a href="#lost-found" class="btn btn-inline">Vedi tutti</a>
+              </div>
+              <div id="latest" class="cards"></div>
+            </section>
 
-            <div class="panel-head">
-              <h3>Oggetti registrati</h3>
-              <div class="filters">
-                <input type="search" id="search" placeholder="Cerca per luogo o oggetto" aria-label="Cerca">
+            <h2 class="center">Riepilogo della comunità</h2>
+            <section class="summary">
+              <article class="panel soon">
+                <h3>Segnalazioni</h3>
+                <div class="soon-icon" aria-hidden="true">⚠</div>
+                <span class="badge arrivo">In arrivo</span>
+                <p class="muted">Qui vedrai presto lo stato delle segnalazioni della comunità.</p>
+              </article>
+              <article class="panel soon">
+                <h3>Attività</h3>
+                <div class="soon-icon" aria-hidden="true">☆</div>
+                <span class="badge arrivo">In arrivo</span>
+                <p class="muted">Qui vedrai presto le iniziative e gli eventi della comunità.</p>
+              </article>
+            </section>
+          </div>
+
+          <!-- PAGINA: LOST & FOUND -->
+          <div class="page" data-page="lost-found" hidden>
+            <details class="panel fold" id="add-details">
+              <summary>Hai trovato un oggetto? Registralo</summary>
+              <form id="add-form" class="add-form" novalidate>
+                <div class="field"><label for="f-oggetto">Oggetto</label>
+                  <input id="f-oggetto" type="text" placeholder="Es. Ombrello blu" aria-describedby="e-oggetto">
+                  <div class="error" id="e-oggetto" role="alert"></div></div>
+                <div class="field"><label for="f-luogo">Luogo</label>
+                  <input id="f-luogo" type="text" placeholder="Es. Aula 3" aria-describedby="e-luogo">
+                  <div class="error" id="e-luogo" role="alert"></div></div>
+                <div class="field"><label for="f-data">Data</label>
+                  <input id="f-data" type="date" aria-describedby="e-data">
+                  <div class="error" id="e-data" role="alert"></div></div>
+                <div class="field wide"><label for="f-descrizione">Descrizione (facoltativa)</label>
+                  <textarea id="f-descrizione" rows="2" maxlength="200" placeholder="Colore, marca, segni particolari: aiuta chi lo cerca"></textarea></div>
+                <button class="btn" type="submit">Registra oggetto</button>
+              </form>
+            </details>
+
+            <section class="panel" id="lostfound">
+              <h2>Bacheca Lost &amp; Found</h2>
+              <p class="muted sub">Cerca tra gli oggetti ritrovati con una o più parole chiave (nome, luogo o descrizione).</p>
+              <div class="board-tools">
+                <input type="search" id="search" placeholder="Es. zaino nero, biblioteca…" aria-label="Cerca oggetti">
                 <select id="filter-stato" aria-label="Filtra per stato">
                   <option value="">Tutti</option>
                   <option value="trovato">Da restituire</option>
                   <option value="restituito">Restituiti</option>
                 </select>
               </div>
-            </div>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>Oggetto</th><th>Luogo</th><th>Stato</th><th>Data</th><th>Azione</th></tr></thead>
-                <tbody id="table-body"></tbody>
-              </table>
-            </div>
-          </section>
+              <p class="muted" id="count" role="status" aria-live="polite"></p>
+              <div id="board" class="cards"></div>
+            </section>
+          </div>
+
         </div>
       </main>
     </div>
   </div>
+  <dialog id="detail" class="detail" aria-labelledby="detail-title">
+    <div class="detail-head">
+      <h2 id="detail-title"></h2>
+      <button type="button" id="detail-close" class="detail-x" aria-label="Chiudi">✕</button>
+    </div>
+    <div id="detail-body"></div>
+    <div class="detail-actions" id="detail-actions"></div>
+  </dialog>
   <script src="dati.js"></script>
   <script src="app.js"></script>
+  <script src="router.js"></script>
 </body>
 </html>
