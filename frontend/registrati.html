@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrati · Smart Community</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="login-page">
+  <div class="login-split">
+    <aside class="login-side">
+      <a class="brand" href="index.html"><span class="logo" aria-hidden="true">▣</span> Smart Community</a>
+      <div>
+        <h2>Entra a far parte della comunità</h2>
+        <p>Crea il tuo account per registrare gli oggetti trovati e aiutare chi li cerca.</p>
+      </div>
+      <a class="back-home" href="index.html">⇦ Torna alla home</a>
+    </aside>
+
+    <main class="login-main">
+      <div class="login-card">
+        <h1>Registrati</h1>
+        <p>Bastano pochi dati.</p>
+
+        <form id="reg-form" novalidate>
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" autocomplete="name" aria-describedby="nome-err">
+            <div class="error" id="nome-err" role="alert"></div>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" autocomplete="email" placeholder="nome@esempio.it" aria-describedby="email-err">
+            <div class="error" id="email-err" role="alert"></div>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" type="password" autocomplete="new-password" aria-describedby="pw-err">
+            <div class="error" id="pw-err" role="alert"></div>
+          </div>
+          <div class="field">
+            <label for="conferma">Conferma password</label>
+            <input id="conferma" type="password" autocomplete="new-password" aria-describedby="conf-err">
+            <div class="error" id="conf-err" role="alert"></div>
+          </div>
+          <button class="btn" type="submit">Crea account</button>
+        </form>
+
+        <p class="switch">Hai già un account? <a href="login.html">Vai al login</a></p>
+        <p class="demo-note">Registrazione dimostrativa: i dati non vengono salvati da nessuna parte.</p>
+      </div>
+    </main>
+  </div>
+  <script src="registrati.js"></script>
+</body>
+</html>
