@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login · Smart Community</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="login-page">
+  <div class="login-split">
+    <aside class="login-side">
+      <a class="brand" href="index.html"><span class="logo" aria-hidden="true">▣</span> Smart Community</a>
+      <div>
+        <h2>Bentornata nella tua comunità</h2>
+        <p>Accedi per registrare gli oggetti trovati, cercarli per luogo e segnare le restituzioni.</p>
+      </div>
+      <a class="back-home" href="index.html">⇦ Torna alla home</a>
+    </aside>
+
+    <main class="login-main">
+      <div class="login-card">
+        <h1>Login</h1>
+        <p>Inserisci i tuoi dati per entrare.</p>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" autocomplete="username" placeholder="nome@esempio.it" aria-describedby="email-err">
+            <div class="error" id="email-err" role="alert"></div>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="pw-row">
+              <input id="password" type="password" autocomplete="current-password" aria-describedby="pw-err">
+              <button type="button" id="toggle-pw" aria-pressed="false">Mostra</button>
+            </div>
+            <div class="error" id="pw-err" role="alert"></div>
+            <a class="inline-link" href="recupero-password.html">Password dimenticata?</a>
+          </div>
+          <button class="btn" type="submit">Entra</button>
+        </form>
+
+        <p class="switch">Non hai un account? <a href="registrati.html">Registrati</a></p>
+
+        <p class="demo-note">Accesso dimostrativo: non c’è un server, quindi qualsiasi email valida e una password di almeno 6 caratteri aprono la dashboard.</p>
+      </div>
+    </main>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>
