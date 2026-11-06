@@ -1,0 +1,8 @@
+[
+  {"id": 1, "Oggetto": "Zaino viola", "Luogo": "Biblioteca", "Stato": "Trovato" ,"Data":""},
+  {"id": 2, "Oggetto": "Giacca nera", "Luogo": "Aula 3", "Stato": "trovato", "Data": "2026-11-05"},
+  {"id": 3, "Oggetto": "Borraccia verde", "Luogo": "Palestra", "Stato": "restituito", "Data": "2026-11-04"},
+  {"id": 4, "Oggetto": "Chiavi con portachiavi rosso", "Luogo": "Ingresso", "Stato": "trovato", "Data": "2026-11-04"},
+  {"id": 5, "Oggetto": "Quaderno a quadretti", "Luogo": "Aula 5", "Stato": "restituito", "Data": "2026-11-02"}
+]
+
