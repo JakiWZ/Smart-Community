@@ -1,0 +1,40 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+.next/
+.turbo/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+# Local infrastructure state
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
