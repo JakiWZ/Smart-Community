@@ -103,3 +103,16 @@ tr:last-child td { border-bottom: 0; }
   .user { margin: 0; padding: 0; border: 0; }
   nav { flex-direction: row; flex-wrap: wrap; width: 100%; }
 }
+
+/* interattività: form, azioni di riga, barre cliccabili */
+.file-btn { border: 0; font: inherit; font-size: .85rem; }
+.add-form { display: grid; gap: .75rem 1rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); align-items: start; margin: 1rem 0 1.5rem; }
+.field label { display: block; font-size: .82rem; font-weight: 600; margin-bottom: .25rem; }
+.field input { width: 100%; font: inherit; font-size: .88rem; padding: .5rem .6rem; border: 1px solid var(--bordo); border-radius: 6px; }
+.field input[aria-invalid="true"] { border-color: var(--rosso); }
+.error { color: var(--rosso); font-size: .78rem; min-height: 1.1em; margin-top: .2rem; }
+.add-form .btn { align-self: end; margin-bottom: 1.3rem; cursor: pointer; }
+.row-btn { font: inherit; font-size: .78rem; padding: .25rem .6rem; border-radius: 6px; border: 1px solid var(--rosso); background: #fff; color: var(--rosso); cursor: pointer; }
+.row-btn:hover { background: var(--rosa); }
+.bar-btn { font: inherit; font-size: .8rem; text-align: left; border: 0; background: none; padding: 0; cursor: pointer; color: var(--testo); text-decoration: underline dotted; }
+#lostfound h2 { font-size: 1.05rem; }
