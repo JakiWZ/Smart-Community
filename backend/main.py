@@ -107,3 +107,4 @@ def file_frontend(nome):
 if __name__ == "__main__":
     storage.init_db()
     app.run(debug=True)
+
