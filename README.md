@@ -6,7 +6,7 @@ Progetto per la challenge Smart Community: una piccola applicazione per condivid
 
 Il progetto è in sviluppo. La dashboard presenta dati dimostrativi e permette di interagire con essi nel browser. Le modifiche sono conservate nel `localStorage` del browser, quando disponibile; il pulsante di ripristino riporta i dati iniziali. Il nome dell'utente nella sessione è conservato nel `sessionStorage`.
 
-**Login, registrazione e recupero password sono solo dimostrativi:** non verificano credenziali su un server, non creano account persistenti e non inviano email. Non usare password reali. Il backend non è ancora collegato al frontend: `main.py`, `logic.py` e `storage.py` sono vuoti; `models.py` definisce i modelli iniziali. SQLite e lo scambio JSON/CSV tra backend e frontend sono previsti, ma non ancora integrati.
+**Login, registrazione e recupero password sono solo dimostrativi:** non verificano credenziali su un server, non creano account persistenti e non inviano email. Non usare password reali. Il backend non è ancora collegato al frontend: `main.py` è vuoto, `logic.py` contiene un avvio minimo che chiama `storage.init_db()`, `storage.py` apre la connessione SQLite e inizializza il database con lo schema presente in `infrastructure/`, e `models.py` definisce i modelli iniziali. Lo scambio JSON/CSV tra backend e frontend è previsto, ma non ancora integrato.
 
 ## Requisiti
 
@@ -20,14 +20,14 @@ Il progetto è in sviluppo. La dashboard presenta dati dimostrativi e permette d
 2. Apri `frontend/index.html` nel browser e naviga alle pagine disponibili; in alternativa apri direttamente `frontend/dashboard.html`.
 3. Esplora la dashboard con i dati di esempio. I dati modificati nel browser sono locali al dispositivo e al profilo utilizzato.
 
-Non è ancora disponibile un'applicazione Python avviabile con menu: `backend/main.py` è vuoto. Non esiste attualmente un comando di installazione, avvio del server o test automatici documentato.
+Non è ancora disponibile un'applicazione Python avviabile con menu: `backend/main.py` è vuoto e `backend/logic.py` si limita a inizializzare il database. Non esiste attualmente un comando di installazione, avvio del server o test automatici documentato.
 
 ## Struttura
 
 ```text
 backend/          Modelli Python e file riservati a logica, storage e avvio
 frontend/         Pagine HTML, stili, script e dati dimostrativi
-infrastructure/   Dati e risorse per l'infrastruttura
+infrastructure/   Schema del database SQLite (`schemda.sql`) e dati dimostrativi (`dati.json`)
 docs/             Materiali e requisiti del progetto
 .github/          Configurazioni GitHub
 ```

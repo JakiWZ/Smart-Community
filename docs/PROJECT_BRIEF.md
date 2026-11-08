@@ -6,14 +6,14 @@ Compilatelo insieme all'inizio: serve per il CP1. Sostituite ogni `…` con una 
 
 | Nome del gruppo | Progetto | Challenge |
 |---|---|---|
-| … | … | … |
+| MindHive | SmartCommunity | Challenge 5 |
 
 | Componente | Ruolo |
 |---|---|
-| … | Logica Python |
-| … | Dati e test |
-| … | Frontend |
-| … | Coordinamento e documentazione |
+| Micaela | Logica Python |
+| Danilo | Dati e test |
+| Giusy | Frontend |
+| Gioacchino | Coordinamento e documentazione |
 
 In tre unite Frontend e Coordinamento e documentazione.
 
@@ -21,13 +21,13 @@ In tre unite Frontend e Coordinamento e documentazione.
 
 | Problema | Target |
 |---|---|
-| … | … |
+| Le informazioni sugli eventi universitari e sugli oggetti smarriti o ritrovati possono essere difficili da trovare perché sono distribuite su diversi canali. | Studentesse, studenti e altri membri della comunità universitaria. |
 
 Domanda guida: «Come potremmo aiutare chi, a fare cosa, attraverso cosa?»
 
 | Aiutare chi | A fare cosa | Attraverso cosa |
 |---|---|---|
-| … | … | … |
+| La comunità universitaria | Trovare informazioni sugli eventi e segnalare oggetti smarriti o ritrovati | Una dashboard condivisa |
 
 | Cosa escludiamo |
 |---|
