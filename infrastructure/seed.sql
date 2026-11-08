@@ -1,6 +1,6 @@
 -- Dati mock. Uso: sqlite3 smart_community.db < infrastructure/schema.sql && sqlite3 smart_community.db < infrastructure/seed.sql
 PRAGMA foreign_keys = ON;
-BEGIN;
+
 DELETE FROM post;
 DELETE FROM oggetti_smarriti;
 DELETE FROM utenti;
@@ -167,4 +167,3 @@ INSERT INTO post (id, titolo, descrizione, categoria, id_autore, id_oggetto, dat
   (49, 'Gita al museo', 'Iscrizioni entro venerdì in segreteria.', 'evento', 25, NULL, '2026-09-01'),
   (50, 'Oggetto ritrovato #14', 'Chi lo riconosce può ritirarlo in segreteria.', 'oggetto', 8, 14, '2026-10-22');
 
-COMMIT;
