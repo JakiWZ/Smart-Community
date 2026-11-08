@@ -52,3 +52,6 @@ crash.log
 *.sqlite3-journal
 *.sqlite3-wal
 *.sqlite3-shm
+
+# Generated output from the Python program
+output/
